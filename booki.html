@@ -1,0 +1,47 @@
+<!DOCTYPE html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial scale=1.0" />
+        <script src="https://kit.fontawesome.com/3d4b3d2f3c.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+        <title>Booki</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div id="bloc_page">
+
+            <header>
+                <nav>
+                    <img id="logo" src="images/logo/Booki@3x.png" alt="Logo Booki">
+                    <div class="sub-nav">
+                        <a href="#">Hébergements</a>
+                        <a href="#">Activités</a>
+                    </div>
+                </nav>
+            </header>
+
+            <section>
+                <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+                <div class="sous_titre">
+                    <p>En plein centre ville ou en pleine nature</p>
+                </div>
+            </section>
+            <form method="post" action="traitement.php">
+                    <div class="formulaire">
+                        <div class="map_marker">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                            <input type="text" name="région" value="Marseille, France" />
+                        <a href="#" id="loupe">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <button>Rechercher</button>
+                    </div>
+            </form>
+        
+        </div>
+    </body>
+</html>
