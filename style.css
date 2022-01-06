@@ -363,8 +363,11 @@ template {
 
 #bloc_page
 {
-  width: 90%;
+  width: 100%;
   margin: auto;
+  max-width: 1400px; 
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* En-tête */
@@ -372,7 +375,9 @@ template {
 #logo
 {
   width: 120px;
+  height: auto;
   margin-right: auto;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 nav
@@ -387,8 +392,9 @@ nav a
 {
   padding: 40px;
   font-size: 15px;
-  color: grey;
+  color: black;
   text-decoration: none;
+  border-top: 2px solid transparent;
 }
 
 nav a:hover
@@ -414,26 +420,36 @@ nav a:hover
   }
   .sub-nav
   {
-    flex-basis: 100%;
+    width: 100%;
   }
   .sub-nav a
   {
     width: 50%;
-    border-bottom: 3px solid rgb(230, 230, 230);
+    border-bottom: 2px solid rgb(230, 230, 230);
   }
 
   nav a
   {
     text-align: center;
-    padding: 40 40 20 40px;
+    padding: 40 20 20 40px;
   }
 
   nav a:hover 
   {
     border-top: none;
-    border-bottom: 3px solid blue;
+    border-bottom: 2px solid blue;
   }
 }
+
+@media screen and (max-width: 360px)
+{
+  .sub-nav a
+  {
+    overflow: auto;
+    overflow-wrap: auto;
+  }
+}
+
 
 /* Section */
 
@@ -445,7 +461,6 @@ h1
 
 .sous_titre
 {
-  color: grey;
   font-size: 12px;
 }
 
@@ -460,34 +475,283 @@ h1
 .map_marker
 {
   padding: 12 15 12 15px;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(240, 240, 240);
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
 }
 
 .formulaire input
 {
-  border: hidden;
-  padding-left: 15px;
+  border: 1px solid rgb(240, 240, 240);
+  border-left: hidden;
+  border-right: hidden;
+  padding: 9px 15px 9px 15px;;
   font-weight: bold;
+  flex-basis: 40px;
 }
 
-.formulaire a
-{
-  background-color: blue;
-  color: white;
-  text-decoration: none;
-  padding: 9px;
-}
-
-#loupe
+.fas.fa-search
 {
   display: none;
 }
 
-#Rechercher
+.formulaire button
+{
+  background-color: rgb(0, 102, 255);
+  border-radius: 0 10px 10px 0;
+  color: white;
+  font-weight: bold;
+  padding: 10 15 10 15px;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px)
+{
+  .rechercher
+  {
+    display: none;
+  }
+
+  .fas.fa-search
+  {
+    display: block;
+    padding: 1px 0;
+  }
+}
+
+@media screen and (max-width: 360px)
+{
+  .formulaire input
+  {
+    overflow: visible;
+  }
+}
+
+/* Filtres */
+
+.liste-filtres
 {
   display: flex;
-  border-top-right-radius: 10px;
+  align-items: center;
+  gap: 30px 20px;
+  flex-wrap: wrap;
+}
+
+.liste-filtres .fas
+{
+  color: blue;
+  background-color: #DEEBFF;
+  border-radius: 50%;
+  margin: -3px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtre
+{
+  border: 2px solid #f2f2f2;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  transition: all 100ms;
+}
+
+.liste-filtres span
+{
   font-weight: bold;
+  padding: 12px;
+}
+
+.filtre:hover
+{
+  background-color: #f3f8ff;
+  transform: scale(1.015);
+}
+
+/* Résultat de recherche */
+
+.info-msg
+{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.info-msg .fas
+{
+  color: blue;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Squelette cards */
+
+.liste-appart
+{
+  display: flex;
+  gap: 25px;
+}
+
+.ville h3
+{
+  padding: 20px 0 0 40px;
+}
+
+.liste-appart > div
+{
+  background-color: #f2f2f2;
+  border-radius: 20px;
+}
+
+.liste-appart .ville
+{
+  flex-basis: 66%;
+}
+
+.liste-appart .ville a
+{
+  font-weight: bold;
+}
+
+
+.liste-appart .populaire
+{
+  flex-basis: 33%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.liste-appart .populaire .h3
+{
+  flex-basis: 100%;
+}
+
+.ville-appart
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 20px 0 20px;
+}
+
+@media screen and (max-width: 768px)
+{
+  .liste-appart
+  {
+    flex-direction: column-reverse;
+  }
+}
+
+/* Cards stars */
+
+.blue
+{
+  color: #0065fc;
+}
+
+.darkgrey
+{
+  color: #d9d9d9;
+}
+
+/* Cards */
+
+.card
+{
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 0 0 16px #0000002e;
+  margin-bottom: 40px;
+ 
+}
+
+.card h4,
+.card p
+{
+  margin: 3px;
+}
+
+.card img
+{
+  border-radius: 20px 20px 0 0;
+  width: 230px;
+  height: 100px;
+  image-rendering: -webkit-optimize-contrast;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ville button
+{
+  border: none;
+  font-weight: bold;
+  color: black;
+  margin: 0 0 40px 40px;
+}
+
+.ville button:hover
+{
+  cursor: pointer;
+}
+
+/* Popular Cards */
+
+.populaire
+{
+  display: flex;
+
+}
+
+.populaire h3
+{
+  padding: 20px 0 0 40px;
+  margin-bottom: 0;
+}
+
+.popular-card
+{
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 0 0 16px #0000002e;
+}
+
+.popular-card img
+{
+  border-radius: 20px 0 0 20px;
+  width: 120px;
+  height: 120px;
+  image-rendering: -webkit-optimize-contrast;
+  object-fit: cover;
+  object-position: center;
+}
+
+.popular-description
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-card h4,
+.popular-card p
+{
+  margin: 3px;
+}
+
+.popular-card .stars
+{
+  margin-top: auto;
 }
