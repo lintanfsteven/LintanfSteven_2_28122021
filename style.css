@@ -621,7 +621,7 @@ h1
   padding: 0 25px;
 }
 
-.liste-appart h4,
+.liste-appart h3,
 .liste-appart p
 {
   font-size: 15px;
@@ -643,7 +643,7 @@ h1
   border-radius: 20px;
 }
 
-.ville h3
+.ville h2
 {
   padding: 0 0 5px 20px;
   font-size: 18px;
@@ -718,7 +718,7 @@ h1
   font-weight: normal;
 }
 
-.card h4,
+.card h3,
 .card p
 {
   margin: 3px;
@@ -761,7 +761,7 @@ h1
   padding: 0 30px;
 }
 
-.populaire h3
+.populaire h2
 {
   font-size: 18px;
 }
@@ -803,7 +803,7 @@ h1
   flex-direction: column;
 }
 
-.popular-card h4,
+.popular-card h3,
 .popular-card p
 {
   margin: 10px 0 0 5px;
@@ -822,9 +822,9 @@ h1
 
 @media screen and (max-width: 1060px)
 {
-  .card h4,
+  .card h3,
   .card p,
-  .popular-card h4,
+  .popular-card h3,
   .popular-card p
   {
     font-size: 13px
@@ -850,7 +850,7 @@ h1
     margin: 0
   }
 
-  .ville h3
+  .ville h2
   {
     padding-left: 30px;
   }
@@ -908,7 +908,7 @@ h1
     flex-basis: 100%;
   }
 
-  .ville h3
+  .ville h2
   {
     padding-left: 5px;
   }
