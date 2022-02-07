@@ -1143,8 +1143,9 @@ footer a:hover
 
 @media screen and (max-width: 762px)
 {
-  footer
+  .bloc-footer
   {
     flex-direction: column;
+    padding-left: 25px;
   }
 }
